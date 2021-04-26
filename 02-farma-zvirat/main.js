@@ -1,10 +1,10 @@
 let krava = {
-    jmeno: 'Kravicka',
+    jmeno: 'Kravička',
     foto: 'obrazky/krava.jpg'
 };
 
 let ovecka = {
-    jmeno: 'Ovecka',
+    jmeno: 'Ovečka',
     foto: 'obrazky/ovce.jpg'
 };
 
@@ -81,7 +81,7 @@ let dalsiZvirata = [
     }
 ];
 
-dalsiZvirata.forEach(function(elementVPoli) {
+/*dalsiZvirata.forEach(function(elementVPoli) {
     let zvirata =  document.createElement("div");
     zvirata.classList.add("zvire");
 
@@ -99,4 +99,24 @@ dalsiZvirata.forEach(function(elementVPoli) {
 
     // proměnná pro farmu je definována výše
     farma.appendChild(zvirata);
-})
+})*/
+
+for (let i = 0; i < dalsiZvirata.length; i++) {
+    const zvireCyklusFor = document.createElement('div');
+    zvireCyklusFor.className = "zvire";
+
+    const jmenoZvirete = document.createElement('div');
+    jmenoZvirete.classList.add('jmeno');
+    jmenoZvirete.innerHTML = dalsiZvirata[i].jmeno;
+
+    const fotoZvirete = document.createElement('img');
+    fotoZvirete.className = "foto";
+    fotoZvirete.src = dalsiZvirata[i].foto;
+    fotoZvirete.alt = dalsiZvirata[i].jmeno;
+
+
+    zvireCyklusFor.appendChild(jmenoZvirete);
+    zvireCyklusFor.appendChild(fotoZvirete);
+
+    farma.appendChild(zvireCyklusFor);
+}
