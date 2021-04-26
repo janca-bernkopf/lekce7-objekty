@@ -61,3 +61,42 @@ let ovecka = {
 // Bonus
 // Co kdybychom meli program, kde tech zvirat je vic - objekt krava, objekt ovce, objekt prase...
 // Musela bych pro kazdy objekt mit samostatnou promennou...jde to lépe?
+
+let dalsiZvirata = [
+    {
+        jmeno: "Husička",
+     foto: "obrazky/husa.jpg"
+    },
+    {
+        jmeno: "Kočička",
+        foto: "obrazky/kocka.jpg"
+    },
+    {
+        jmeno: "Koník",
+     foto: "obrazky/kun.jpg"
+    },
+    {
+        jmeno: "Pejsek",
+     foto: "obrazky/pes.jpg"
+    }
+];
+
+dalsiZvirata.forEach(function(elementVPoli) {
+    let zvirata =  document.createElement("div");
+    zvirata.classList.add("zvire");
+
+    let fotaZvirat = document.createElement("img");
+    fotaZvirat.classList.add("foto");
+    fotaZvirat.src = elementVPoli.foto;
+    fotaZvirat.alt = elementVPoli.jmeno;
+
+    let jmenaZvirat = document.createElement("div");
+    jmenaZvirat.classList.add("jmeno")
+    jmenaZvirat.textContent = elementVPoli.jmeno;
+
+    zvirata.appendChild(fotaZvirat);
+    zvirata.appendChild(jmenaZvirat);
+
+    // proměnná pro farmu je definována výše
+    farma.appendChild(zvirata);
+})
